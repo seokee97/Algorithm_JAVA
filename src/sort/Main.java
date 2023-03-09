@@ -1,6 +1,7 @@
 package sort;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -8,7 +9,6 @@ public class Main {
     public static void main(String[] args) {
         long start;
         long end;
-
 
         System.out.println("[BubbleSort]");
         BubbleSort bubbleSort = new BubbleSort(getTestItems());
@@ -94,6 +94,22 @@ public class Main {
         sortArray2.sort(Comparator.naturalOrder());
         end = System.currentTimeMillis();
         System.out.println("[정렬 후]:" + sortArray2);
+        System.out.println("[시간] : "+(end - start)/1000.0);
+
+
+        System.out.println("\n===============================================\n");
+
+        System.out.println("[JavaSort3]");
+        int[] arrays = new int[getTestItems().size()];
+        int CNT = -1;
+        for(int item : getTestItems()){
+            arrays[++CNT] = item;
+        }
+        System.out.println("[정렬되기 전]:" + Arrays.toString(arrays));
+        start = System.currentTimeMillis();
+        Arrays.sort(arrays);
+        end = System.currentTimeMillis();
+        System.out.println("[정렬 후]:" + Arrays.toString(arrays));
         System.out.println("[시간] : "+(end - start)/1000.0);
     }
 

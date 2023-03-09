@@ -1,8 +1,6 @@
 package sort;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Objects;
 
 public class MergeSort {
     private ArrayList<Integer> items;
