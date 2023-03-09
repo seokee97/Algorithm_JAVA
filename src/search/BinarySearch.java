@@ -1,7 +1,6 @@
 package search;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class BinarySearch {
     public boolean binarySearch(ArrayList<Integer> items , int searchData) {
