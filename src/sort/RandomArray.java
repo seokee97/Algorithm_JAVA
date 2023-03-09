@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class RandomArray {
 
     private static RandomArray _randomArray = null;
-    private ArrayList<Integer> randomValue;
+    private ArrayList<Integer> randomValue = null;
 
     public static RandomArray newInstance(){
         if(_randomArray == null){
@@ -19,22 +19,27 @@ public class RandomArray {
 
     private RandomArray(){  }
 
-    public ArrayList<Integer> getRandomValue() {
+    public void randomValue() {
         randomValue = new ArrayList<>();
         int count = 10000;
         for (int i = 0; i < count; i++) {
             randomValue.add(((int)(Math.random()*100000))+1);
         }
-        return randomValue;
     }
 
-    public ArrayList<Integer> getRandomDisplayValue() {
+    public void randomDisplayValue() {
         randomValue = new ArrayList<>();
         int count = 9;
         for (int i = 0; i < count; i++) {
             randomValue.add(((int)(Math.random()*100000))+1);
         }
-        return randomValue;
+    }
+
+    public ArrayList<Integer> getRandomValue(){
+        if(randomValue != null)
+            return new ArrayList<>(randomValue);
+        else
+            return null;
     }
 
     public void setRandomValue(ArrayList<Integer> randomValue) {
