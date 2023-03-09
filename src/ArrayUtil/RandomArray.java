@@ -1,4 +1,4 @@
-package sort;
+package ArrayUtil;
 
 import java.util.ArrayList;
 
@@ -21,7 +21,7 @@ public class RandomArray {
 
     public void randomValue() {
         randomValue = new ArrayList<>();
-        int count = 10000;
+        int count = 50000;
         for (int i = 0; i < count; i++) {
             randomValue.add(((int)(Math.random()*100000))+1);
         }
